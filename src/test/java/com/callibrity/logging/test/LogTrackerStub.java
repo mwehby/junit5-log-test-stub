@@ -60,12 +60,13 @@ public class LogTrackerStub  implements BeforeTestExecutionCallback, AfterTestEx
 	
 	public LogTrackerStub recordForLevel(LogLevel level) {
 		this.level = level;
+		resetLoggingFramework();
+		prepareLoggingFramework();
 		return this;
 	}
 
 	public LogTrackerStub recordForObject(Object sut) {
 		Class<?> type = sut.getClass();
-		
 		recordForType(type);
 		return this;
 	}

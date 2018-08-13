@@ -23,6 +23,7 @@ public class CUTTest {
 
 	@Test
 	public void testCUTMethodOne() {
+		logTrackerStub.recordForLevel(LogLevel.DEBUG);
 		CUT classUnderTest = new CUT();
 		classUnderTest.doNothingButLog();
 		
@@ -34,7 +35,6 @@ public class CUTTest {
 	public void testCUTMethodTwo() {
 		CUT classUnderTest = new CUT();
 		classUnderTest.doNothingButLogTwo();
-		
 		assertTrue(logTrackerStub.contains("Start CUT.doNothingBugLogTwo"));
 		assertTrue(logTrackerStub.contains("End CUT.doNothingBugLogTwo"));
 		assertEquals(2, logTrackerStub.size());

@@ -13,7 +13,7 @@ public class CUT {
 	Logger logger = LoggerFactory.getLogger(CUT.class);
 	
 	public void doNothingButLog() {
-		logger.info("Inside CUT.doNothingButLog");
+		logger.debug("Inside CUT.doNothingButLog");
 	}
 	
 	public void doNothingButLogTwo() {
