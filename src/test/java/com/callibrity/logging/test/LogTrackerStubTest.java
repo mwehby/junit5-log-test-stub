@@ -38,29 +38,6 @@ class LogTrackerStubTest {
 	}
 	
 	@Test
-	void testRecordingAtHigherLevelDoesRecordLowerLevel() throws Exception {
-
-		TestInterface underTest = new TestInterface() {
-			Logger logger = LoggerFactory.getLogger(TestInterface.class);
-
-			public void causeALog() {
-				logger.info("info log statement");
-				logger.debug("debug log statement");
-			}
-		};
-
-		LogTrackerStub logTracker = LogTrackerStub.create();
-		logTracker.recordForLevel(LogLevel.INFO);
-		logTracker.recordForType(TestInterface.class);
-		logTracker.beforeTestExecution(null);
-		underTest.causeALog();
-		logTracker.afterTestExecution(null);
-		assertTrue(logTracker.contains("info log statement"));
-		assertFalse(logTracker.contains("debug log statement"));
-		assertEquals(1, logTracker.size());
-	}
-	
-	@Test
 	void testRecordingInfoLevelLogMessageByObject() throws Exception {
 
 		TestInterface underTest = new TestInterface() {
@@ -82,6 +59,29 @@ class LogTrackerStubTest {
 		underTest.causeALog();
 		logTracker.afterTestExecution(null);
 		assertTrue(logTracker.contains("test"));
+		assertEquals(1, logTracker.size());
+	}
+	
+	@Test
+	void testRecordingAtHigherLevelDoesRecordLowerLevel() throws Exception {
+
+		TestInterface underTest = new TestInterface() {
+			Logger logger = LoggerFactory.getLogger(TestInterface.class);
+
+			public void causeALog() {
+				logger.info("info log statement");
+				logger.debug("debug log statement");
+			}
+		};
+
+		LogTrackerStub logTracker = LogTrackerStub.create();
+		logTracker.recordForLevel(LogLevel.INFO);
+		logTracker.recordForType(TestInterface.class);
+		logTracker.beforeTestExecution(null);
+		underTest.causeALog();
+		logTracker.afterTestExecution(null);
+		assertTrue(logTracker.contains("info log statement"));
+		assertFalse(logTracker.contains("debug log statement"));
 		assertEquals(1, logTracker.size());
 	}
 }
