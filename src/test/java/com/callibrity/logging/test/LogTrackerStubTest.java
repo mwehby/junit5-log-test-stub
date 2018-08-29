@@ -8,13 +8,14 @@ import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.callibrity.logging.test.LogTrackerStub.LogLevel;
+
 
 class LogTrackerStubTest {
 
 	public interface TestInterface {
 		public void causeALog();
 	}
+	
 	
 	@Test
 	void testRecordingInfoLevelLogMessageByType() throws Exception {
@@ -27,14 +28,14 @@ class LogTrackerStubTest {
 			}
 		};
 
-		LogTrackerStub logTracker = LogTrackerStub.create();
-		logTracker.recordForLevel(LogLevel.INFO);
-		logTracker.recordForType(TestInterface.class);
-		logTracker.beforeTestExecution(null);
+		LogTrackerStub logTrackerStub = LogTrackerStub.create();
+		logTrackerStub.recordForLevel(LogTracker.LogLevel.INFO);
+		logTrackerStub.recordForType(TestInterface.class);
+		logTrackerStub.beforeTestExecution(null);
 		underTest.causeALog();
-		logTracker.afterTestExecution(null);
-		assertTrue(logTracker.contains("test"));
-		assertEquals(1, logTracker.size());
+		logTrackerStub.afterTestExecution(null);
+		assertTrue(logTrackerStub.contains("test"));
+		assertEquals(1, logTrackerStub.size());
 	}
 	
 	@Test
@@ -52,14 +53,14 @@ class LogTrackerStubTest {
 			
 		};
 
-		LogTrackerStub logTracker = LogTrackerStub.create();
-		logTracker.recordForLevel(LogLevel.INFO);
-		logTracker.recordForObject(underTest);
-		logTracker.beforeTestExecution(null);
+		LogTrackerStub logTrackerStub = LogTrackerStub.create();
+		logTrackerStub.recordForLevel(LogTracker.LogLevel.INFO);
+		logTrackerStub.recordForObject(underTest);
+		logTrackerStub.beforeTestExecution(null);
 		underTest.causeALog();
-		logTracker.afterTestExecution(null);
-		assertTrue(logTracker.contains("test"));
-		assertEquals(1, logTracker.size());
+		logTrackerStub.afterTestExecution(null);
+		assertTrue(logTrackerStub.contains("test"));
+		assertEquals(1, logTrackerStub.size());
 	}
 	
 	@Test
@@ -74,14 +75,14 @@ class LogTrackerStubTest {
 			}
 		};
 
-		LogTrackerStub logTracker = LogTrackerStub.create();
-		logTracker.recordForLevel(LogLevel.INFO);
-		logTracker.recordForType(TestInterface.class);
-		logTracker.beforeTestExecution(null);
+		LogTrackerStub logTrackerStub = LogTrackerStub.create();
+		logTrackerStub.recordForLevel(LogTracker.LogLevel.INFO);
+		logTrackerStub.recordForType(TestInterface.class);
+		logTrackerStub.beforeTestExecution(null);
 		underTest.causeALog();
-		logTracker.afterTestExecution(null);
-		assertTrue(logTracker.contains("info log statement"));
-		assertFalse(logTracker.contains("debug log statement"));
-		assertEquals(1, logTracker.size());
+		logTrackerStub.afterTestExecution(null);
+		assertTrue(logTrackerStub.contains("info log statement"));
+		assertFalse(logTrackerStub.contains("debug log statement"));
+		assertEquals(1, logTrackerStub.size());
 	}
 }

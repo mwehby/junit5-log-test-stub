@@ -6,8 +6,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
+import com.callibrity.logging.test.LogTracker;
 import com.callibrity.logging.test.LogTrackerStub;
-import com.callibrity.logging.test.LogTrackerStub.LogLevel;
 
 
 
@@ -16,14 +16,14 @@ public class CUTTest {
 
 
 	@RegisterExtension
-	LogTrackerStub logTrackerStub = LogTrackerStub.create().recordForLevel(LogLevel.INFO)
+	LogTrackerStub logTrackerStub = LogTrackerStub.create().recordForLevel(LogTracker.LogLevel.INFO)
 		.recordForType(CUT.class);
 	
 
 
 	@Test
 	public void testCUTMethodOne() {
-		logTrackerStub.recordForLevel(LogLevel.DEBUG);
+		logTrackerStub.recordForLevel(LogTracker.LogLevel.DEBUG);
 		CUT classUnderTest = new CUT();
 		classUnderTest.doNothingButLog();
 		
