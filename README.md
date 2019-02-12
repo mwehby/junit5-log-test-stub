@@ -6,7 +6,7 @@ See the following blog post for more information: https://www.callibrity.com/blo
 
 
 Quick Summary
-CUT ( Class Under Test )
+CUT ( Class Under Test ) . 
 In order to illustrate how to use the new JUnit 5 Extension model to unit test logging statements, let’s pretend we have the follow CUT.
 
 
