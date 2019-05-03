@@ -77,12 +77,12 @@ public class LogTracker {
 		return listAppender.list.size();
 	}
 	
-	void resetLoggingFramework() {
+	public void resetLoggingFramework() {
 		listAppender.stop();
 		resetLoggingContext();
 	}
 	
-	void prepareLoggingFramework() {
+	public void prepareLoggingFramework() {
 		resetLoggingContext();
 	    addAppenderToLoggingSources();
 	    listAppender.start();

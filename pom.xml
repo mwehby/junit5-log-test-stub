@@ -5,7 +5,7 @@
 
 	<groupId>com.callibrity.logging</groupId>
 	<artifactId>log-tracker</artifactId>
-	<version>1.0</version>
+	<version>1.0.1</version>
 	<packaging>jar</packaging>
 
 	<name>log-tracker</name>
@@ -51,16 +51,17 @@
 			<artifactId>logback-core</artifactId>
 			<version>${logback.version}</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>${jnuit.jupiter.version}</version>
+		</dependency>
+		
 
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-engine</artifactId>
-			<version>${jnuit.jupiter.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-api</artifactId>
 			<version>${jnuit.jupiter.version}</version>
 			<scope>test</scope>
 		</dependency>
