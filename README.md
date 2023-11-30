@@ -9,7 +9,7 @@ The jar file can be pulled in and used via Maven Central Repository.
 <dependency>
   <groupId>com.callibrity.logging</groupId>
   <artifactId>log-tracker</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
 </dependency>
 ```
 
