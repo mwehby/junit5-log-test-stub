@@ -7,6 +7,9 @@
 .settings/
 .idea
 
+# Ignore Apple's MacOS Desktop Services Store file
+.DS_Store
+
 # Log file
 *.log
 
