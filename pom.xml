@@ -19,6 +19,15 @@
       		<distribution>repo</distribution>
     	</license>
   	</licenses>
+
+	<developers>
+		<developer>
+			<name>Mark Wehby</name>
+			<email>mwehby@callibrity.com</email>
+			<organization>Callibrity</organization>
+			<organizationUrl>https://www.callibrity.com</organizationUrl>
+		</developer>
+	</developers>
 	
 	<scm>
     	<url>https://github.com/mwehby/junit5-log-test-stub</url>
