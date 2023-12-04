@@ -30,7 +30,7 @@
 		<maven.compiler.target>1.10</maven.compiler.target>
 		<jnuit.jupiter.version>5.10.1</jnuit.jupiter.version>
 		<slf4j.version>2.0.9</slf4j.version>
-		<logback.version>1.4.12</logback.version>
+		<logback.version>1.4.14</logback.version>
 		<surefire.plugin.version>3.2.2</surefire.plugin.version>
 
 	</properties>
@@ -75,6 +75,36 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>${surefire.plugin.version}</version>
 			</plugin>
+
+
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+
+				<executions>
+					<execution>
+						<id>attach-javadoc</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+
+				<executions>
+					<execution>
+						<id>attach-source</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
 		</plugins>
 	</build>
 
