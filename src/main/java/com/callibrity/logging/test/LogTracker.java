@@ -101,7 +101,10 @@ public class LogTracker {
 	}
 	
 	private void resetLoggingContext() {
-		loggerContext.reset();
+		for(Class<?> logSource : loggingSources){
+			Logger logger = (Logger) LoggerFactory.getLogger(logSource);
+			logger.detachAppender(listAppender);
+		}
 	}
 	
 }
