@@ -37,10 +37,10 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		
 		<java.version>17</java.version>
-		<maven.compiler.source>${java.verion}</maven.compiler.source>
-		<maven.compiler.target>${java.verion}</maven.compiler.target>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
 
-		<jnuit.jupiter.version>5.13.4</jnuit.jupiter.version>
+		<junit.jupiter.version>5.13.4</junit.jupiter.version>
 		<slf4j.version>2.0.17</slf4j.version>
 		<logback.version>1.5.20</logback.version>
 		
@@ -68,14 +68,14 @@
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-api</artifactId>
-			<version>${jnuit.jupiter.version}</version>
+			<version>${junit.jupiter.version}</version>
 		</dependency>
 		
  
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-engine</artifactId>
-			<version>${jnuit.jupiter.version}</version>
+			<version>${junit.jupiter.version}</version>
 			<scope>test</scope>
 		</dependency>
 
