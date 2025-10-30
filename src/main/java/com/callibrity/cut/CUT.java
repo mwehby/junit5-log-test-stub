@@ -17,8 +17,8 @@ public class CUT {
 	}
 	
 	public void doNothingButLogTwo() {
-		logger.info("Start CUT.doNothingBugLogTwo");
-		
-		logger.info("End CUT.doNothingBugLogTwo");
+		logger.info("Start CUT.doNothingButLogTwo");
+
+		logger.info("End CUT.doNothingButLogTwo");
 	}
 }

@@ -35,10 +35,10 @@ public class CUTTest {
 	public void testCUTMethodTwo() {
 		CUT classUnderTest = new CUT();
 		classUnderTest.doNothingButLogTwo();
-		assertTrue(logTrackerStub.contains("Start CUT.doNothingBugLogTwo"));
-		assertTrue(logTrackerStub.contains("End CUT.doNothingBugLogTwo"));
+		assertTrue(logTrackerStub.contains("Start CUT.doNothingButLogTwo"));
+		assertTrue(logTrackerStub.contains("End CUT.doNothingButLogTwo"));
 		assertEquals(2, logTrackerStub.size());
-		
+
 	}
 
 }

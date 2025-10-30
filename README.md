@@ -9,7 +9,7 @@ The jar file can be pulled in and used via Maven Central Repository.
 <dependency>
   <groupId>com.callibrity.logging</groupId>
   <artifactId>log-tracker</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.3</version>
 </dependency>
 ```
 
@@ -27,9 +27,9 @@ public class CUT {
 	}
 	
 	public void doNothingButLogTwo() {
-		logger.info("Start CUT.doNothingBugLogTwo");
-		
-		logger.info("End CUT.doNothingBugLogTwo");
+		logger.info("Start CUT.doNothingButLogTwo");
+
+		logger.info("End CUT.doNothingButLogTwo");
 	}
 }
 
@@ -58,10 +58,10 @@ public class CUTTest {
 	public void testCUTMethodTwo() {
 		CUT classUnderTest = new CUT();
 		classUnderTest.doNothingButLogTwo();
-		assertTrue(logTrackerStub.contains("Start CUT.doNothingBugLogTwo"));
-		assertTrue(logTrackerStub.contains("End CUT.doNothingBugLogTwo"));
+		assertTrue(logTrackerStub.contains("Start CUT.doNothingButLogTwo"));
+		assertTrue(logTrackerStub.contains("End CUT.doNothingButLogTwo"));
 		assertEquals(2, logTrackerStub.size());
-		
+
 	}
 
 }
